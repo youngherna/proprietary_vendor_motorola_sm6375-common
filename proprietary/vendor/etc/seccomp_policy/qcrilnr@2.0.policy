@@ -19,14 +19,13 @@
 # limitations under the License.
 
 gettid: 1
-prctl: arg0 == PR_SET_VMA || arg0 == PR_SET_NAME || arg0 == PR_GET_DUMPABLE || arg0 == PR_GET_NAME || arg0 == PR_SET_TIMERSLACK || arg0 == 0x37 || arg0 == PR_GET_NO_NEW_PRIVS || arg0 == PR_SET_DUMPABLE || arg0 == PR_SET_PTRACER || arg0 == PR_CAP_AMBIENT
+prctl: 1
 write: 1
 read: 1
 close: 1
 openat: 1
 futex: 1
 rt_sigprocmask: 1
-#ioctl: arg1 == _IOC(_IOC_NONE || arg1 == _IOC(_IOC_READ || arg1 == TCGETS || arg1 == BINDER_WRITE_READ || arg1 == SIOCGIFNAME || arg1 == BINDER_THREAD_EXIT || arg1 == VSOC_MAYBE_SEND_INTERRUPT_TO_HOST || arg1 == BINDER_SET_MAX_THREADS || arg1 == BINDER_VERSION
 ioctl : 1
 recvfrom: 1
 ppoll: 1
@@ -109,6 +108,7 @@ setuid: 1
 kill: 1
 eventfd2: 1
 fchownat: 1
+sysinfo: 1
 #for cutback
 setgroups: 1
 setgid : 1
