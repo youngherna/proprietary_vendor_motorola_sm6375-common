@@ -1081,6 +1081,7 @@ PRODUCT_PACKAGES += \
     TimeService \
     uimgbaservice \
     ImsRcsService \
+    NQNfcNci \
     QtiTelephonyService \
     WfdService \
     ims \
