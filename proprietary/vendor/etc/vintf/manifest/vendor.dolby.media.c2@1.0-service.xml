@@ -6,7 +6,7 @@
      production of derivative works therefrom without the express permission of
      the copyright owners is prohibited.
 
-                   Copyright (C) 2020-2022 by Dolby Laboratories,
+                   Copyright (C) 2020-2021 by Dolby Laboratories,
                                All rights reserved.
 
 -->
@@ -20,5 +20,6 @@
             <instance>default</instance>
             <instance>software</instance>
         </interface>
+        <fqname>@1.0::IComponentStore/default1</fqname>
     </hal>
 </manifest>
