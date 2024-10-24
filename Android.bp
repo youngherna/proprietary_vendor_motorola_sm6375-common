@@ -114,20 +114,9 @@ android_app_import {
 }
 
 android_app_import {
-       name: "QtiTelephony",
-       owner: "motorola",
-       apk: "proprietary/system_ext/app/QtiTelephony/QtiTelephony.apk",
-       certificate: "platform",
-       dex_preopt: {
-               enabled: false,
-       },
-       system_ext_specific: true,
-}
-
-android_app_import {
-	name: "QtiTelephonyService",
+	name: "NQNfcNci",
 	owner: "motorola",
-	apk: "proprietary/system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
+	apk: "proprietary/system_ext/app/NQNfcNci/NQNfcNci.apk",
 	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
@@ -136,9 +125,20 @@ android_app_import {
 }
 
 android_app_import {
-	name: "NQNfcNci",
+        name: "QtiTelephony",
+        owner: "motorola",
+        apk: "proprietary/system_ext/app/QtiTelephony/QtiTelephony.apk",
+        certificate: "platform",
+        dex_preopt: {
+                enabled: false,
+        },
+        system_ext_specific: true,
+}
+
+android_app_import {
+	name: "QtiTelephonyService",
 	owner: "motorola",
-	apk: "proprietary/system_ext/app/NQNfcNci/NQNfcNci.apk",
+	apk: "proprietary/system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
 	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
@@ -216,13 +216,6 @@ dex_import {
 }
 
 dex_import {
-       name: "moto-telephony",
-       owner: "motorola",
-       jars: ["proprietary/system_ext/framework/moto-telephony.jar"],
-       system_ext_specific: true,
-}
-
-dex_import {
 	name: "com.qti.dpmframework",
 	owner: "motorola",
 	jars: ["proprietary/system_ext/framework/com.qti.dpmframework.jar"],
@@ -233,6 +226,13 @@ dex_import {
 	name: "dpmapi",
 	owner: "motorola",
 	jars: ["proprietary/system_ext/framework/dpmapi.jar"],
+	system_ext_specific: true,
+}
+
+dex_import {
+	name: "moto-telephony",
+	owner: "motorola",
+	jars: ["proprietary/system_ext/framework/moto-telephony.jar"],
 	system_ext_specific: true,
 }
 
@@ -279,13 +279,6 @@ dex_import {
 }
 
 dex_import {
-	name: "vendor.qti.ims.factoryaidlservice-V1-java",
-	owner: "motorola",
-	jars: ["proprietary/system_ext/framework/vendor.qti.ims.factoryaidlservice-V1-java.jar"],
-	system_ext_specific: true,
-}
-
-dex_import {
 	name: "vendor.qti.ims.factory-V1.1-java",
 	owner: "motorola",
 	jars: ["proprietary/system_ext/framework/vendor.qti.ims.factory-V1.1-java.jar"],
@@ -314,16 +307,9 @@ dex_import {
 }
 
 dex_import {
-	name: "vendor.qti.ims.rcssipaidlservice-V1-java",
+	name: "vendor.qti.ims.factoryaidlservice-V1-java",
 	owner: "motorola",
-	jars: ["proprietary/system_ext/framework/vendor.qti.ims.rcssipaidlservice-V1-java.jar"],
-	system_ext_specific: true,
-}
-
-dex_import {
-	name: "vendor.qti.ims.rcsuceaidlservice-V1-java",
-	owner: "motorola",
-	jars: ["proprietary/system_ext/framework/vendor.qti.ims.rcsuceaidlservice-V1-java.jar"],
+	jars: ["proprietary/system_ext/framework/vendor.qti.ims.factoryaidlservice-V1-java.jar"],
 	system_ext_specific: true,
 }
 
@@ -349,6 +335,13 @@ dex_import {
 }
 
 dex_import {
+	name: "vendor.qti.ims.rcssipaidlservice-V1-java",
+	owner: "motorola",
+	jars: ["proprietary/system_ext/framework/vendor.qti.ims.rcssipaidlservice-V1-java.jar"],
+	system_ext_specific: true,
+}
+
+dex_import {
 	name: "vendor.qti.ims.rcsuce-V1.0-java",
 	owner: "motorola",
 	jars: ["proprietary/system_ext/framework/vendor.qti.ims.rcsuce-V1.0-java.jar"],
@@ -369,8 +362,15 @@ dex_import {
 	system_ext_specific: true,
 }
 
+dex_import {
+	name: "vendor.qti.ims.rcsuceaidlservice-V1-java",
+	owner: "motorola",
+	jars: ["proprietary/system_ext/framework/vendor.qti.ims.rcsuceaidlservice-V1-java.jar"],
+	system_ext_specific: true,
+}
+
 prebuilt_etc_xml {
-	name: "android.hardware.gnss@2.1-service-qti",
+	name: "android.hardware.gnss@2.1-service-qti.xml",
 	owner: "motorola",
 	src: "proprietary/vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml",
 	filename_from_src: true,
@@ -379,7 +379,7 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-	name: "manifest_android.hardware.drm@1.3-service.widevine",
+	name: "manifest_android.hardware.drm@1.3-service.widevine.xml",
 	owner: "motorola",
 	src: "proprietary/vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml",
 	filename_from_src: true,
@@ -388,7 +388,7 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-	name: "vendor.dolby.media.c2@1.0-service",
+	name: "vendor.dolby.media.c2@1.0-service.xml",
 	owner: "motorola",
 	src: "proprietary/vendor/etc/vintf/manifest/vendor.dolby.media.c2@1.0-service.xml",
 	filename_from_src: true,
@@ -397,7 +397,7 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-	name: "vendor.qti.diag.hal.service",
+	name: "vendor.qti.diag.hal.service.xml",
 	owner: "motorola",
 	src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml",
 	filename_from_src: true,
@@ -406,7 +406,7 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-	name: "vendor.qti.gnss@4.0-service",
+	name: "vendor.qti.gnss@4.0-service.xml",
 	owner: "motorola",
 	src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml",
 	filename_from_src: true,
@@ -415,28 +415,11 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-	name: "vendor.qti.hardware.servicetracker@1.2-service",
+	name: "vendor.qti.hardware.servicetracker@1.2-service.xml",
 	owner: "motorola",
 	src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml",
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
 	soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-	name: "vendor.qti.hardware.fm@1.0",
-	owner: "motorola",
-	strip: {
-		none: true,
-	},
-	target: {
-		android_arm64: {
-			srcs: ["proprietary/system_ext/lib64/vendor.qti.hardware.fm@1.0.so"],
-		},
-	},
-	compile_multilib: "64",
-	check_elf_files: false,
-	prefer: true,
-	system_ext_specific: true,
 }
 
